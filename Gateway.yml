@@ -1,1 +1,70 @@
-
+eureka:
+  instance:
+    hostname: api-gateway
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka
+server:
+  port: 8222
+spring:
+  application:
+    name: Gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+        lower-case-service-id: true
+      routes:
+        - id: products
+          uri: lb://product-service
+          predicates:
+            - Path=/api/v1/products/**
+          filters:
+            - AuthenticationFilter
+        - id: users
+          uri: lb://user-service
+          predicates:
+            - Path=/api/v1/users/**
+          filters:
+            - AuthenticationFilter
+        - id: carts
+          uri: lb://cart-service
+          predicates:
+            - Path=/api/v1/carts/**
+          filters:
+            - AuthenticationFilter
+        - id: orders
+          uri: lb://order-service
+          predicates:
+            - Path=/api/v1/orders/**
+          filters:
+            - AuthenticationFilter
+        - id: promotions
+          uri: lb://promotion-service
+          predicates:
+            - Path=/api/v1/promotions/**
+          filters:
+            - AuthenticationFilter
+        - id: payments
+          uri: lb://payment-service
+          predicates:
+            - Path=/api/v1/payments/**
+        - id: shipping
+          uri: lb://shipping-service
+            - Path=/api/v1/shippings/**
+          filters:
+            - AuthenticationFilter
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  cors:
+    allowed-origins: "http://localhost:3000"  # Adjust this value to match your frontend origin
+    allowed-methods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+    allowed-headers: "*"  # You can customize this based on your needs
+    allow-credentials: true
