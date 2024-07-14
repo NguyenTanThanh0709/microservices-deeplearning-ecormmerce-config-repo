@@ -1,9 +1,9 @@
 eureka:
   instance:
-    hostname: promotion-service
+    hostname: localhost
   client:
     service-url:
-      defaultZone: http://discovery-server:8761/eureka
+      defaultZone: http://localhost:8761/eureka
 server:
   port: 8083
 spring:
@@ -22,7 +22,7 @@ spring:
 
 application:
   config:
-    promotions-url: http://promotion-service:8222/api/v1/promotions
+    promotions-url: http://localhost:8222/api/v1/promotions
 
 management:
   tracing:
