@@ -1,9 +1,9 @@
 eureka:
   instance:
-    hostname: user-service
+    hostname: localhost
   client:
     service-url:
-      defaultZone: http://discovery-server:8761/eureka
+      defaultZone: http://localhost:8761/eureka
 
 
 server:
@@ -24,7 +24,7 @@ spring:
 
 application:
   config:
-    users-url: http://user-service:8222/api/v1/users
+    users-url: http://localhost:8222/api/v1/users
 
 management:
   tracing:
