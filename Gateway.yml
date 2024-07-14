@@ -1,9 +1,9 @@
 eureka:
   instance:
-    hostname: api-gateway
+    hostname: localhost
   client:
     service-url:
-      defaultZone: http://discovery-server:8761/eureka
+      defaultZone: http://localhost:8761/eureka
 server:
   port: 8222
 spring:
@@ -17,47 +17,47 @@ spring:
         lower-case-service-id: true
       routes:
         - id: products
-          uri: lb://product-service
+          uri: http://localhost:8082
           predicates:
             - Path=/api/v1/products/**
           filters:
             - AuthenticationFilter
         - id: users
-          uri: lb://user-service
+          uri: http://localhost:8081
           predicates:
             - Path=/api/v1/users/**
           filters:
             - AuthenticationFilter
         - id: carts
-          uri: lb://cart-service
+          uri: http://localhost:8084
           predicates:
             - Path=/api/v1/carts/**
           filters:
             - AuthenticationFilter
         - id: orders
-          uri: lb://order-service
+          uri: http://localhost:8085
           predicates:
             - Path=/api/v1/orders/**
           filters:
             - AuthenticationFilter
         - id: promotions
-          uri: lb://promotion-service
+          uri: http://localhost:8083
           predicates:
             - Path=/api/v1/promotions/**
           filters:
             - AuthenticationFilter
         - id: payments
-          uri: lb://payment-service
+          uri: http://localhost:8086
           predicates:
             - Path=/api/v1/payments/**
         - id: shipping
-          uri: lb://shipping-service
+          uri: http://localhost:8087
             - Path=/api/v1/shippings/**
           filters:
             - AuthenticationFilter
 
         - id: notification
-          uri: lb://notification-service
+          uri: http://localhost:8089
           predicates:
             - Path=/api/v1/notification/**
           filters:
