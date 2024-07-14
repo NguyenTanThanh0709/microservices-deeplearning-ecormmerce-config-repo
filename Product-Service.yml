@@ -19,7 +19,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://product-mysql:3306/productdb
     username: root
-    password: root
+    password: Abc@123456789
   jpa:
     hibernate:
       ddl-auto: update
