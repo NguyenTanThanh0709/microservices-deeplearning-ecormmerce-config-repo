@@ -39,9 +39,9 @@ spring:
 #          spec: maximumSize=200,expireAfterWrite=300s
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://cart-mysql:3306/cartdb
+    url: jdbc:mysql://localhost:3306/carts
     username: root
-    password: root
+    password: 1234567
   jpa:
     hibernate:
       ddl-auto: update
