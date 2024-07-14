@@ -41,7 +41,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://cart-mysql:3306/cartdb
     username: root
-    password: 1234567
+    password: root
   jpa:
     hibernate:
       ddl-auto: update
