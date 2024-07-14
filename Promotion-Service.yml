@@ -11,7 +11,7 @@ spring:
     name: Promotion-Service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/promotions
+    url: jdbc:mysql://promotion-mysql:3306/promotiondb
     username: root
     password: 1234567
   jpa:
