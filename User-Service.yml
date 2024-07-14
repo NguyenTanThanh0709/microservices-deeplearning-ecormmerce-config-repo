@@ -13,9 +13,9 @@ spring:
     name: User-Service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://user-mysql:3306/userdb
+    url: jdbc:mysql://localhost:3306/users
     username: root
-    password: root
+    password: 1234567
   jpa:
     hibernate:
       ddl-auto: update
