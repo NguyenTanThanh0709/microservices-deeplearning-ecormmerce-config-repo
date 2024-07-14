@@ -52,6 +52,7 @@ spring:
             - Path=/api/v1/payments/**
         - id: shipping
           uri: http://localhost:8087
+          predicates:
             - Path=/api/v1/shippings/**
           filters:
             - AuthenticationFilter
