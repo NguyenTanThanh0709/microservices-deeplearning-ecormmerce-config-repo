@@ -11,9 +11,9 @@ spring:
     name: Shipping-Service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://shipping-mysql:3306/shippingdb
+    url: jdbc:mysql://localhost:3306/shippings
     username: root
-    password: root
+    password: 1234567
   jpa:
     hibernate:
       ddl-auto: update
