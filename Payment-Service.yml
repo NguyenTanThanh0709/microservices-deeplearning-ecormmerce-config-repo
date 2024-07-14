@@ -1,9 +1,9 @@
 eureka:
   instance:
-    hostname: payment-service
+    hostname: localhost
   client:
     service-url:
-      defaultZone: http://discovery-server:8761/eureka
+      defaultZone: http://localhost:8761/eureka
 server:
   port: 8086
 spring:
@@ -22,7 +22,7 @@ spring:
 
 application:
   config:
-    payments-url: http://payment-service:8222/api/v1/payments
+    payments-url: http://localhost:8222/api/v1/payments
 
 management:
   tracing:
